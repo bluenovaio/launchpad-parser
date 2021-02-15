@@ -21,6 +21,8 @@ jobs:
           node-version: 12
       - name: Install Packages
         run: yarn install
+      - name: Format Check
+        run: yarn format-check
       - name: Lint
         run: yarn lint
       - name: Test

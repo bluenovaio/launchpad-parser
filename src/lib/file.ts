@@ -20,7 +20,7 @@ export async function readFile (rootPath: string): Promise<{ contents: Buffer, t
       if (fileContents) {
         return {
           contents: fileContents,
-          type: 'yaml',
+          type: 'yaml'
         };
       }
     } catch (err) {
