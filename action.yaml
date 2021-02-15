@@ -1,0 +1,7 @@
+name: 'launchpad-parser'
+description: 'Github Action for parsing the "launchpad.yml" file.'
+author: '@bluenovaio'
+inputs: { }
+runs:
+  using: 'node12'
+  main: 'action.js'
