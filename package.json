@@ -6,6 +6,15 @@
   "repository": "git@github.com:bluenovaio/launchpad-parser.git",
   "author": "@bluenovaio",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+  },
   "jest": {
     "globals": {
       "ts-jest": {
@@ -31,6 +40,7 @@
     "@types/node": "^14.14.28",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.15.0",
+    "@vercel/ncc": "^0.27.0",
     "eslint": "^7.20.0",
     "eslint-config-semistandard": "^15.0.1",
     "eslint-config-standard": "^16.0.2",
