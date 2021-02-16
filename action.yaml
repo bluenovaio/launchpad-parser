@@ -1,7 +1,16 @@
 name: 'launchpad-parser'
 description: 'Github Action for parsing the "launchpad.yml" file.'
 author: '@bluenovaio'
-inputs: { }
+inputs:
+  working-directory:
+    description: The directory where we will search for the "launchpad.yaml" and run all steps.
+    required: true
+    default: ${{ github.workspace }}
+outputs:
+  fileType:
+    description: The type of file parsed. Currently ONLY "yaml" is supported.
+  contents:
+    description: The file contents as stringified object.
 runs:
   using: 'node12'
-  main: 'action.js'
+  main: 'dist/index.js'

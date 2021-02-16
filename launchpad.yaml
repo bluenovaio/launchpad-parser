@@ -1,0 +1,17 @@
+# ONLY used for testing
+version: v1.0
+name: launchpad-example
+registry: gcr.io/<project-id>/launchpad-example
+defaults:
+  min: 0
+  max: 5
+environments:
+  preview:
+    min: 0
+    max: 1
+    environmentVariables: { }
+  preProduction:
+    environmentVariables: { }
+  production:
+    environmentVariables: { }
+    

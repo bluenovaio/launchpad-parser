@@ -28,6 +28,14 @@ jobs:
       - name: Test
         run: yarn test
       - id: parseConfig
-        uses: bluenovaio/launchpad-parser@${{ github.sha }}
-      - run: |
-          echo "${{fromJson(steps.parseConfig.outputs.contents).version}}"
+        name: Run Action Code
+        uses: ./
+      - uses: actions/github-script@v3
+        env:
+          CONTENTS: ${{ steps.parseConfig.outputs.contents }}
+        with:
+          script: |
+            const config = JSON.parse(process.env.CONTENTS);
+            if (config.version !== "v1.0") {
+              throw new Error('Did not parse correctly in the action.');
+            }
