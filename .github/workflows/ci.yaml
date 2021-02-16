@@ -27,9 +27,8 @@ jobs:
 #         run: yarn lint
 #       - name: Test
 #         run: yarn test
-      - name: Build & Package
-        run: yarn package
       - id: parseConfig
+        name: Run Action Code
         uses: ./
       - run: |
           echo "${{fromJson(steps.parseConfig.outputs.contents).version}}"
