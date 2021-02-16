@@ -29,5 +29,5 @@ export async function readFile (rootPath: string): Promise<{ contents: Buffer, t
     }
   }
 
-  throw Error(`${fileName}.yaml not found.`);
+  throw Error(`${rootPath}/${fileName}.yaml not found.`);
 }
