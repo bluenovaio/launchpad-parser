@@ -1,3 +1,4 @@
+# ONLY used for testing
 version: v1.0
 name: launchpad-example
 registry: gcr.io/<project-id>/launchpad-example
