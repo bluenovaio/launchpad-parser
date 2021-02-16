@@ -24,6 +24,7 @@ export async function readFile (rootPath: string): Promise<{ contents: Buffer, t
         };
       }
     } catch (err) {
+      core.debug(rootPath);
       core.debug(err.message);
     }
   }
