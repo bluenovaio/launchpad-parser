@@ -27,7 +27,8 @@ jobs:
         run: yarn lint
       - name: Test
         run: yarn test
-      - id: parseConfig
-        uses: bluenovaio/launchpad-parser:${{ github.sha }}
-      - run: |
-          echo "${{fromJson(steps.parseConfig.outputs.contents).version}}"
+      - run: echo ${{ github.sha }}
+#       - id: parseConfig
+#         uses: bluenovaio/launchpad-parser:${{ github.sha }}
+#       - run: |
+#           echo "${{fromJson(steps.parseConfig.outputs.contents).version}}"
