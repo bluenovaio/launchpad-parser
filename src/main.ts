@@ -5,7 +5,7 @@ import * as file from './lib/file';
 
 async function run(): Promise<void> {
   try {
-    const fileContents = await file.readFile(__dirname);
+    const fileContents = await file.readFile(process.env.GITHUB_WORKSPACE as string);
 
     const parsedFile = await parser.parse(
       fileContents.contents,
