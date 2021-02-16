@@ -27,8 +27,7 @@ jobs:
 #         run: yarn lint
 #       - name: Test
 #         run: yarn test
-      - run: cd ./examples
       - id: parseConfig
-        uses: bluenovaio/launchpad-parser:${{ github.sha }}
+        uses: ./
       - run: |
           echo "${{fromJson(steps.parseConfig.outputs.contents).version}}"
