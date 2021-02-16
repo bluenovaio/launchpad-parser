@@ -1,3 +1,5 @@
+![CI](https://github.com/bluenovaio/launchpad-parser/workflows/CI/badge.svg)
+
 # launchpad-parser
 
 Github Action for parsing the "launchpad.yaml" file for [LaunchPad](https://github.com/bluenovaio/launchpad).
