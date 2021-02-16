@@ -21,14 +21,15 @@ jobs:
           node-version: 12
       - name: Install Packages
         run: yarn install
-#       - name: Format Check
-#         run: yarn format-check
-#       - name: Lint
-#         run: yarn lint
-#       - name: Test
-#         run: yarn test
+      - name: Format Check
+        run: yarn format-check
+      - name: Lint
+        run: yarn lint
+      - name: Test
+        run: yarn test
       - id: parseConfig
         name: Run Action Code
         uses: ./
-      - run: |
-          echo "${{fromJson(steps.parseConfig.outputs.contents).version}}"
+      - run: exit 1
+        name: Test Parser in Action (Exit if fails)
+        if: ${{fromJson(steps.parseConfig.outputs.contents).version}} != "v1.0"
