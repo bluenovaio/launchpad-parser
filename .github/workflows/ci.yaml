@@ -33,6 +33,7 @@ jobs:
       - uses: actions/github-script@v3
         with:
           script: |
-            if (fromJson(steps.parseConfig.outputs.contents).version !== "v1.0") {
+            const config = JSON.parse(steps.parseConfig.outputs.contents);
+            if (config.version !== "v1.0") {
               throw new Error('Did not parse correctly in the action.');
             }
