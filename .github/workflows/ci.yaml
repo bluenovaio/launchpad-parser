@@ -31,9 +31,9 @@ jobs:
         name: Run Action Code
         uses: ./
       - uses: actions/github-script@v3
+        env:
+          CONTENTS: ${{ steps.parseConfig.outputs.contents }}
         with:
-          env:
-            CONTENTS: ${{ steps.parseConfig.outputs.contents }}
           script: |
             const config = JSON.parse(process.env.CONTENTS);
             if (config.version !== "v1.0") {
