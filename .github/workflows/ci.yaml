@@ -15,12 +15,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v1
-#       - name: Use Node.js v12
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: 12
-#       - name: Install Packages
-#         run: yarn install
+      - name: Use Node.js v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Packages
+        run: yarn install
 #       - name: Format Check
 #         run: yarn format-check
 #       - name: Lint
