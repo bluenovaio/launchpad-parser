@@ -30,6 +30,9 @@ jobs:
       - id: parseConfig
         name: Run Action Code
         uses: ./
-      - run: exit 1
-        name: Test Parser in Action (Exit if fails)
-        if: ${{fromJson(steps.parseConfig.outputs.contents).version}} != "v1.0"
+      - uses: actions/github-script@v3
+        with:
+          script: |
+            if (fromJson(steps.parseConfig.outputs.contents).version !== "v1.0") {
+              throw new Error('Did not parse correctly in the action.');
+            }
