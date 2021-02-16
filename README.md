@@ -1,6 +1,6 @@
 # launchpad-parser
 
-Github Action for parsing the "launchpad.yaml" file
+Github Action for parsing the "launchpad.yaml" file for [LaunchPad](https://github/bluenovaio/launchpad).
 
 ## Usage
 
