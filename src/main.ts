@@ -7,6 +7,8 @@ async function run(): Promise<void> {
   try {
     const fileContents = await file.readFile(process.env.GITHUB_WORKSPACE as string);
 
+    core.info(JSON.stringify(process.env));
+
     const parsedFile = await parser.parse(
       fileContents.contents,
       fileContents.type
