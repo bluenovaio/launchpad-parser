@@ -15,18 +15,18 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v1
-      - name: Use Node.js v12
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install Packages
-        run: yarn install
-      - name: Format Check
-        run: yarn format-check
-      - name: Lint
-        run: yarn lint
-      - name: Test
-        run: yarn test
+#       - name: Use Node.js v12
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - name: Install Packages
+#         run: yarn install
+#       - name: Format Check
+#         run: yarn format-check
+#       - name: Lint
+#         run: yarn lint
+#       - name: Test
+#         run: yarn test
       - run: echo ${{ github.sha }}
 #       - id: parseConfig
 #         uses: bluenovaio/launchpad-parser:${{ github.sha }}
