@@ -3,9 +3,11 @@ import * as core from '@actions/core';
 import * as parser from './lib/parser';
 import * as file from './lib/file';
 
-async function run(): Promise<void> {
+async function run (): Promise<void> {
   try {
-    const fileContents = await file.readFile(core.getInput('working-directory'));
+    const fileContents = await file.readFile(
+      core.getInput('working-directory', { required: true })
+    );
 
     const parsedFile = await parser.parse(
       fileContents.contents,
