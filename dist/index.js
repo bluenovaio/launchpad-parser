@@ -55,7 +55,7 @@ async function readFile(rootPath) {
             core.debug(err.message);
         }
     }
-    throw Error(`${exports.fileName}.yaml not found.`);
+    throw Error(`GITHUB/${rootPath}/${exports.fileName}.yaml not found.`);
 }
 exports.readFile = readFile;
 //# sourceMappingURL=file.js.map
@@ -112,7 +112,7 @@ const parser = __importStar(__nccwpck_require__(419));
 const file = __importStar(__nccwpck_require__(249));
 async function run() {
     try {
-        const fileContents = await file.readFile(__dirname);
+        const fileContents = await file.readFile(core.getInput('working-directory', { required: true }));
         const parsedFile = await parser.parse(fileContents.contents, fileContents.type);
         core.setOutput('contents', parsedFile);
         core.setOutput('fileType', fileContents.type);
