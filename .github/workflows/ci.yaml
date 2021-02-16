@@ -28,6 +28,6 @@ jobs:
       - name: Test
         run: yarn test
       - id: parseConfig
-        uses: bluenovaio/launchpad-parser@${{ github.sha }}
+        uses: bluenovaio/launchpad-parser:${{ github.sha }}
       - run: |
           echo "${{fromJson(steps.parseConfig.outputs.contents).version}}"
